@@ -1,0 +1,910 @@
+<html xmlns:m="http://www.w3.org/1998/Math/MathML">
+<head>
+<script language="JavaScript" src="mathml_viewer.js"></script>
+</head>
+<body onload="searchAndReplace();">
+<table width="100%">
+	<tr>
+		<td>Exemple 1: Simple equation
+		</td>
+		<td>
+				<span style="display:none;">
+					<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+						<mrow>
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mrow>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mrow>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mrow>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mrow>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+							<mo>=</mo>
+							<mn>0</mn>
+						</mrow>
+					</m:math>
+				</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 1: Simple equation - font size=20
+		</td>
+		<td>
+				<span style="display:none;">
+					<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+						<mrow fontsize="20">
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mrow>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mrow>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mrow>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mrow>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+							<mo>=</mo>
+							<mn>0</mn>
+						</mrow>
+					</m:math>
+				</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 2:Signs you could use.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mfrac fontsize="15">
+					<mrow>
+							<mo>&plus;</mo>
+							<mo>&minus;</mo>
+							<mo>&ast;</mo>
+							<mo>&divide;</mo>
+							<mo>&times;</mo>
+							<mo>&middot;</mo>
+							<mo>&plusmn;</mo>
+							<mo>&mnplus;</mo>
+							<mo>&CircleDot;</mo>
+							<mo>&CircleMinus;</mo>
+							<mo>&CirclePlus;</mo>
+							<mo>&CircleTimes;</mo>
+							<mo>&lt;</mo>
+							<mo>&gt;</mo>
+							<mo>&Gt;</mo>
+							<mo>&Lt;</mo>
+							<mo>&ngeqq;</mo>
+							<mo>&nleqq;</mo>
+							<mo>&ngtr;</mo>
+							<mo>&nless;</mo>
+							<mo>&NotGreaterGreater;</mo>
+							<mo>&NotLessLess;</mo>
+							<mo>&ge;</mo>
+							<mo>&le;</mo>
+							<mo>&leqq;</mo>
+							<mo>&geqq;</mo>
+							<mo>&Gg;</mo>
+							<mo>&Ll;</mo>
+					</mrow>
+					<mrow>
+							<mo>&bcong;</mo>
+							<mo>&Proportion;</mo>
+							<mo>&equiv;</mo>
+							<mo>&ne;</mo>
+							<mo>&equals;</mo>
+							<mo>&approx;</mo>
+							<mo>&sim;</mo>
+							<mo>&ratio;</mo>
+							<mo>&efDot;</mo>
+							<mo>&mid;</mo>
+							<mo>&par;</mo>
+							<mo>&brvbar;</mo>
+					</mrow>
+					</mfrac>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 3:Use msup, msub, msubsup, <br>munder, mover, munderover.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="25">
+						<msup>
+							<mi>X</mi>
+							<mn>2</mn>
+						</msup>
+					<mo>+</mo>
+						<msub>
+							<mi>log</mi>
+							<mn>2</mn>
+						</msub>
+					<mo>+</mo>
+						<msubsup>
+							<mi>X</mi>
+							<mn>2</mn>
+							<mn>56</mn>
+						</msubsup>
+					<mo>+</mo>
+						<munder>
+							<mi>X</mi>
+							<mn>2</mn>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>X</mi>
+							<mn>2</mn>
+						</mover>
+					<mo>+</mo>
+						<munderover>
+							<mi>X</mi>
+							<mn>2</mn>
+							<mn>2454</mn>
+						</munderover>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 4:
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mfrac fontsize="14">
+					<mrow>
+						<msup>
+							<mi>X</mi>
+							<mo>&prime;</mo>
+						</msup>
+					<mo>+</mo>
+						<msup>
+							<mi>X</mi>
+							<mo>&Prime;</mo>
+						</msup>
+					<mo>+</mo>
+						<msup>
+							<mi>X</mi>
+							<mo>&tprime;</mo>
+						</msup>
+					<mo>+</mo>
+						<mover>
+							<mi>X</mi>
+							<mo>&dot;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>X</mi>
+							<mo>&ddot;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>X</mi>
+							<mo>&ctdot;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XXX</mi>
+							<mo>&macr;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XXX</mi>
+							<mo>&UnderBar;</mo>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>XDD</mi>
+							<mo>&hat;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XAA</mi>
+							<mo>&tilde;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XSS</mi>
+							<mo>&rarr;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XSS</mi>
+							<mo>&rarr;</mo>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>XAA</mi>
+							<mo>&larr;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XAA</mi>
+							<mo>&larr;</mo>
+						</munder>
+					<mo>+</mo>
+					</mrow>
+					<mrow>
+						<mover>
+							<mi>XFF</mi>
+							<mo>&harr;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XFF</mi>
+							<mo>&harr;</mo>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>XHHH</mi>
+							<mo>&rharu;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XWWW</mi>
+							<mo>&lharu;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XVV</mi>
+							<mo>&frown;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XVV</mi>
+							<mo>&UnderParenthesis;</mo>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>XBB</mi>
+							<mo>&smile;</mo>
+						</mover>
+					<mo>+</mo>
+						<mover>
+							<mi>XCC</mi>
+							<mo>&OverBrace;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XCC</mi>
+							<mo>&UnderBrace;</mo>
+						</munder>
+					<mo>+</mo>
+						<mover>
+							<mi>XCC</mi>
+							<mo>&OverBracket;</mo>
+						</mover>
+					<mo>+</mo>
+						<munder>
+							<mi>XCC</mi>
+							<mo>&UnderBracket;</mo>
+						</munder>
+					</mrow>
+					</mfrac>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 5: How to use integral, sum, prod, coprod, intersection and reunion.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="15">
+						<msubsup>
+							<mo>&int;</mo>
+							<mi>-&infinity;</mi>
+							<mi>&infinity;</mi>
+						</msubsup>
+						<msup>
+							<mi>e</mi>
+							<mn>x</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<munderover>
+							<mo>&sum;</mo>
+							<mrow>
+								<mi>x</mi>
+								<mo>=</mo>
+								<mn>0</mn>
+							</mrow>
+							<mi>&infinity;</mi>
+						</munderover>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mo>+</mo>
+						<munderover>
+							<mo>&prod;</mo>
+						<mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow>
+						<mi>n</mi>
+					</munderover>
+					<mrow>
+						<mi>x</mi>
+					</mrow>
+					<mo>+</mo>
+						<munderover>
+							<mo>&coprod;</mo>
+						<mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow>
+						<mi>n</mi>
+					</munderover>
+					<mrow>
+						<mi>x</mi>
+					</mrow>
+					<mo>+</mo>
+						<munder>
+							<mrow>
+								<mi>lim</mi>
+							</mrow>
+							<mrow>
+								<mi>x</mi>
+							<mo>&rarr;</mo>
+							<mn>0</mn>
+						</mrow>
+					</munder>
+					<mrow>
+						<mi>x</mi>
+					</mrow>
+					<mo>+</mo>
+						<mo>&Intersection;</mo>
+					<mo>+</mo>
+						<mo>&Union;</mo>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 6: All types of integrals.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mfrac>
+					<mrow fontsize="12">
+						<msubsup>
+							<mo>&int;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&Int;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&tint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&qint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&oint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&Conint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&Cconint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					</mrow>
+					<mrow fontsize="12">
+						<msubsup>
+							<mo>&cwconint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&awconint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&awint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&cwint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+						<msubsup>
+							<mo>&fpartint;</mo><mn>2</mn><mn>56</mn>
+						</msubsup>
+						<msup>
+							<mi>x</mi>
+							<mn>2</mn>
+						</msup>
+						<mtext fontstyle='italic'>dx</mtext>
+					<mo>+</mo>
+					</mrow>
+					</mfrac>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 7: How to use mfrac.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="20">
+						<mrow>
+							<mfrac linethickness="2">
+								<mi> a + b +c </mi>
+								<mi> b </mi>
+							</mfrac>
+						</mrow>
+						<mo>+</mo>
+						<mfrac bevelled="true">
+							<mrow>
+								<mi>3456+</mi>
+								<mfrac>
+									<mi> a </mi>
+									<mi> b + c + d</mi>
+								</mfrac>
+							</mrow>
+							<mrow>
+								<mn>3</mn>
+								<mfrac>
+									<mi> c + d </mi>
+									<mi> d </mi>
+								</mfrac>
+							</mrow>
+						</mfrac>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 8:Use mroot and msqrt.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="20">
+						<msqrt>
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mrow>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mrow>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mrow>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mrow>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+						</msqrt>
+						<mo>+</mo>
+						<mroot linethickness="3">
+							<mrow>
+								<msub>
+									<mi>log</mi>
+									<mn>2</mn>
+								</msub>
+							</mrow>
+							<mi>5</mi>
+						</mroot>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 9:How to use color and fontsize attributes.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="20">
+						<mrow>
+							<mfrac color="#006699">
+								<mi fontweight="bold"> a + b +c </mi>
+								<mi color="#ff0000"> b </mi>
+							</mfrac>
+						</mrow>
+						<mo> + </mo>
+						<mfrac fontstyle="italic" >
+							<mrow>
+								<mi color="#00ff00">3456</mi>
+								<mo> + </mo>
+								<mfrac>
+									<mi> a </mi>
+									<mi fontsize="8"> b + c + d</mi>
+								</mfrac>
+							</mrow>
+							<mrow>
+								<mn>3</mn>
+								<mfrac color="#ffff00">
+									<mi> c + d </mi>
+									<mi color="#ff0000"> d </mi>
+								</mfrac>
+							</mrow>
+						</mfrac>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 10:Use mfenced.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="15">
+						<mfenced linethickness="3" color="#ff0000">
+							<mfrac linethickness="0" color="#006699">
+								<mi> a + b +c </mi>
+								<mi color="#ff0000"> b </mi>
+							</mfrac>
+						</mfenced>
+						<mfenced>
+							<mfrac linethickness="2">
+								<mrow>
+									<mi color="#00ff00">3456</mi>
+									<mo>+</mo>
+									<mfrac>
+										<mi> a </mi>
+										<mfenced>
+											<mi> b + c + d</mi>
+										</mfenced>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mn>3</mn>
+									<mfrac color="#ffff00">
+										<mi> c + d </mi>
+										<mi color="#ff0000"> d </mi>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mfenced>
+						<mo> + </mo>
+						<mfrac linethickness="2">
+							<mfenced open='[' close=']'><mfrac><mi>a</mi><mi>b</mi></mfrac></mfenced>
+							<mfenced open='{' close='}'><mfrac><mi>c</mi><mi>b</mi></mfrac></mfenced>
+						</mfrac>
+						<mo> + </mo>
+						<mfrac linethickness="2">
+							<mfenced open='|' close='|'><mfrac><mi>d</mi><mi>b</mi></mfrac></mfenced>
+							<mfenced open='&lceil;' close='&rceil;'><mfrac><mi>e</mi><mi>b</mi></mfrac></mfenced>
+						</mfrac>
+						<mo> + </mo>
+						<mfrac linethickness="2">
+							<mfenced open='&lfloor;' close='&rfloor;'><mfrac><mi>f</mi><mi>b</mi></mfrac></mfenced>
+							<mrow>
+								<mfenced open='&langle;' close='&rangle;'><mfrac><mi>g</mi><mi>b</mi></mfrac></mfenced>
+								<mo> + </mo>
+								<mfenced open='&Verbar;' close='&Verbar;'><mfrac><mi>h</mi><mi>b</mi></mfrac></mfenced>
+							</mrow>
+						</mfrac>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 11:Greek chars.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="18">
+							<mi fontfamily='_sans'>&#x03bb;</mi>
+							<mi fontfamily='_serif'>&#x03bb;</mi>
+							<mi fontfamily='_typewriter'>&#x03bb;</mi>
+							<mfrac>
+							<mrow>
+								<mi>&#x0391;</mi>
+								<mi>&#x0392;</mi>
+								<mi>&#x0393;</mi>
+								<mi>&#x0394;</mi>
+								<mi>&#x0395;</mi>
+								<mi>&#x0396;</mi>
+								<mi>&#x0397;</mi>
+								<mi>&#x0398;</mi>
+								<mi>&#x0399;</mi>
+								<mi>&#x039a;</mi>
+								<mi>&#x039b;</mi>
+								<mi>&#x039c;</mi>
+								<mi>&#x039d;</mi>
+								<mi>&#x039e;</mi>
+								<mi>&#x039f;</mi>
+								<mi>&#x03a0;</mi>
+								<mi>&#x03a1;</mi>
+								<mi>&#x03a3;</mi>
+								<mi>&#x03a4;</mi>
+								<mi>&#x03a5;</mi>
+								<mi>&#x03a6;</mi>
+								<mi>&#x03a7;</mi>
+								<mi>&#x03a8;</mi>
+								<mi>&#x03a9;</mi>
+							</mrow>
+							<mrow>
+								<mi>&#x03b1;</mi>
+								<mi>&#x03b2;</mi>
+								<mi>&#x03b3;</mi>
+								<mi>&#x03b4;</mi>
+								<mi>&#x03b5;</mi>
+								<mi>&#x03b6;</mi>
+								<mi>&#x03b7;</mi>
+								<mi>&#x03b8;</mi>
+								<mi>&#x03b9;</mi>
+								<mi>&#x03ba;</mi>
+								<mi>&#x03bb;</mi>
+								<mi>&#x03bc;</mi>
+								<mi>&#x03bd;</mi>
+								<mi>&#x03be;</mi>
+								<mi>&#x03bf;</mi>
+								<mi>&#x03c0;</mi>
+								<mi>&#x03c1;</mi>
+								<mi>&#x03c2;</mi>
+								<mi>&#x03c3;</mi>
+								<mi>&#x03c4;</mi>
+								<mi>&#x03c5;</mi>
+								<mi>&#x03c6;</mi>
+								<mi>&#x03c7;</mi>
+								<mi>&#x03c8;</mi>
+								<mi>&#x03c9;</mi>
+							</mrow>
+							</mfrac>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 12:How to use phantom tag and error tag
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="18">
+						<mfrac>
+						<mrow>
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mrow>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mphantom>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mphantom>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mrow>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+							<mo>=</mo>
+							<mn>0</mn>
+						</mrow>
+						<merror>
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mphantom>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mrow>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mrow>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mphantom>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+							<mo>=</mo>
+							<mn>0</mn>
+						</merror>
+						</mfrac>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 13:How to use mtable mtr and mtd.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="18">
+						<mfenced>
+							<mtable>
+								<mtr><mtd><mn>11</mn></mtd><mtd><mn>22345</mn></mtd><mtd><mn>23</mn></mtd></mtr>
+								<mtr><mtd><mn>4444</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>635</mn></mtd></mtr>
+								<mtr><mtd><mn>72</mn></mtd><mtd><mn>888</mn></mtd><mtd><mn>99999</mn></mtd></mtr>
+							</mtable>
+						</mfenced>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 14:How to use columnalign for mtable mtr and mtd.
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="18">
+						<mfenced>
+							<mtable columnalign="right">
+								<mtr columnalign="left"><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr>
+								<mtr><mtd><mn>44444</mn></mtd><mtd  columnalign="center"><mn>5</mn></mtd><mtd><mn>66666</mn></mtd></mtr>
+								<mtr><mtd><mn>7666666</mn></mtd><mtd><mn>855555</mn></mtd><mtd><mn>9</mn></mtd></mtr>
+							</mtable>
+						</mfenced>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Exemple 15:How to use framespacing, rowspacing and columnspacing for mtable mtr and mtd
+		</td>
+		<td>
+			<span style="display:none;">
+				<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+					<mrow fontsize="18">
+						<mfenced>
+							<mtable framespacing="0" rowspacing="0" columnspacing="0">
+								<mtr><mtd><mn>11</mn></mtd><mtd><mn>22345</mn></mtd><mtd><mn>23</mn></mtd></mtr>
+								<mtr><mtd><mn>4444</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>635</mn></mtd></mtr>
+								<mtr><mtd><mn>72</mn></mtd><mtd><mn>888</mn></mtd><mtd><mn>99999</mn></mtd></mtr>
+							</mtable>
+						</mfenced>
+						<mfenced>
+							<mtable framespacing="10" rowspacing="10" columnspacing="10">
+								<mtr><mtd><mn>11</mn></mtd><mtd><mn>22345</mn></mtd><mtd><mn>23</mn></mtd></mtr>
+								<mtr><mtd><mn>4444</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>635</mn></mtd></mtr>
+								<mtr><mtd><mn>72</mn></mtd><mtd><mn>888</mn></mtd><mtd><mn>99999</mn></mtd></mtr>
+							</mtable>
+						</mfenced>
+					</mrow>
+				</m:math>
+			</span>
+		</td>
+	</tr>
+
+</table>
+
+<textarea id="dd" rows="15" cols="140" style="display:none;"></textarea>
+</center>
+
+</body>
+</html>
