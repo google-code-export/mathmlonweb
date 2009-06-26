@@ -1,3 +1,4 @@
+﻿package learnmath.mathml.formula.token{
 /*-------------------------------------------------------------
 	Created by: Ionel Alexandru 
 	Mail: ionel.alexandru@gmail.com
@@ -10,30 +11,37 @@ import learnmath.mathml.formula.token.operators.integrals.*;
 import learnmath.mathml.formula.token.operators.arrows.*;
 import learnmath.mathml.formula.token.operators.normal.*;
 import flash.geom.*;
+import flash.display.MovieClip;
 
-class learnmath.mathml.formula.token.OBox extends TokenBox{
-	var text:String = "";
+public class OBox extends TokenBox{
+	public var text:String = "";
+	
+	public var stretchy:Boolean = true;
+	public var maxsize:int = -1;
+	public var minsize:int = -1;
 
-	public function	OBox(parentBox:Box){
+	public function	OBox(parentBox:Box):void{
 		super(parentBox);
 	}
 
-	public function calculate(){
+	override public function calculate():void{
 		DrawFormula.calculateText(finalBounds, text, style);
 		finalBounds.y = finalBounds.y - finalBounds.height/2;
 	}
 	
 	
-	public function draw(graph:MovieClip){
+	override public function draw(graph:MovieClip):void{
 		var s:Point = new Point();
 		s.x = originPoint.x;
 		s.y = originPoint.y - finalBounds.height/2;
-		DrawFormula.createText(graph, s, text, style);
+		//DrawFormula.createText(graph, s, text, style);
+		drawText(graph, s, text);
+
 	}
 
 	public static function getOBox(text:String, parentBox:Box):OBox{
 		text = EntityManager.replaceWithKnownCode(text);
-		if(text=='&Integral;'){
+		if(text=='&Integral;' || text=='∫'){
 			return new IntOBox(parentBox);
 		}else if(text=='&Int;'){
 			return new Int1OBox(parentBox);
@@ -58,9 +66,9 @@ class learnmath.mathml.formula.token.OBox extends TokenBox{
 		}else if(text=='&fpartint;'){
 			return new Int11OBox(parentBox);
 			
-		}else if(text=='&sum;'){
+		}else if(text=='&sum;' || text=='∑'){
 			return new SumOBox(parentBox);
-		}else if(text=='&prod;'){
+		}else if(text=='&prod;' || text=='∏'){
 			return new ProdOBox(parentBox);
 		}else if(text=='&coprod;'){
 			return new CoProdOBox(parentBox);
@@ -76,15 +84,15 @@ class learnmath.mathml.formula.token.OBox extends TokenBox{
 		}else if(text=='&tprime;'){
 			return new PrimeOBox(parentBox, 3);
 		}else if(text=='&dot;'){
-			var box =  new OBox(parentBox);
+			var box:OBox =  new OBox(parentBox);
 			box.text = "\u2022";
 			return box;
 		}else if(text=='&ddot;'){
-			var box =  new OBox(parentBox);
+			box =  new OBox(parentBox);
 			box.text = "\u2022\u2022";
 			return box;
 		}else if(text=='&TripleDot;'){
-			var box =  new OBox(parentBox);
+			box =  new OBox(parentBox);
 			box.text = "\u2022\u2022\u2022";
 			return box;
 		}else if(text=='&OverBar;'){
@@ -95,11 +103,11 @@ class learnmath.mathml.formula.token.OBox extends TokenBox{
 			return new HatOBox(parentBox);
 		}else if(text=='&Tilde;'){
 			return new TildeOBox(parentBox);
-		}else if(text=='&rarr;'){
+		}else if(text=='&rarr;' || text=='→'){
 			return new RArrOBox(parentBox);
-		}else if(text=='&larr;'){
+		}else if(text=='&larr;' || text=='←'){
 			return new LArrOBox(parentBox);
-		}else if(text=='&harr;'){
+		}else if(text=='&harr;' || text=='↔'){
 			return new HArrOBox(parentBox);
 		}else if(text=='&rharu;'){
 			return new RharuOBox(parentBox);
@@ -130,11 +138,27 @@ class learnmath.mathml.formula.token.OBox extends TokenBox{
 			return new GgOBox(parentBox);
 		}else if(text=='&Ll;'){
 			return new LlOBox(parentBox);
+		}else if(text=='&par;'){
+			return new ParOBox(parentBox);
+		}else if(text=='&NotGreaterGreater;'){
+			return new NotGGOBox(parentBox);
+		}else if(text=='&NotLessLess;'){
+			return new NotLLOBox(parentBox);
+		}else if(text=='&nless;'){
+			return new NLessOBox(parentBox);
+		}else if(text=='&ngtr;'){
+			return new NGtrOBox(parentBox);
+		}else if(text=='&nleqq;'){
+			return new NLeqqOBox(parentBox);
+		}else if(text=='&ngeqq;'){
+			return new NGeqqOBox(parentBox);
 		}
-		var newObox =  new OBox(parentBox);
+		var newObox:OBox =  new OBox(parentBox);
 		newObox.text = EntityManager.replaceAllCode(text);
 		return newObox;
 	}
 	
 	
+}
+
 }

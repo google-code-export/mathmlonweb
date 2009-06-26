@@ -1,29 +1,36 @@
+package learnmath.mathml.formula.script{
 /*-------------------------------------------------------------
 	Created by: Ionel Alexandru 
 	Mail: ionel.alexandru@gmail.com
 	Site: www.learn-math.info
 ---------------------------------------------------------------*/
 import learnmath.mathml.formula.*;
+import learnmath.mathml.formula.layout.*;
 import flash.geom.*;
+import flash.display.MovieClip;
 
-class learnmath.mathml.formula.script.SubBox extends Box{
+public class SubBox extends Box{
 	
-	var base:Box;
-	var sub:Box;
+	public var base:Box;
+	public var sub:Box;
 	
-	public function	SubBox(parentBox:Box){
+	public function	SubBox(parentBox:Box):void{
 		super(parentBox);
 	}
 	
-	public function calculate(){
-		var cP = new Point();
+	override public function calculate():void{
+		var cP:Point = new Point();
 		cP.x = originPoint.x;
 		cP.y = originPoint.y;
 		base.calculateBox(cP);
 		
-		var cE = new Point();
+		var cE:Point = new Point();
 		cE.x = originPoint.x + base.finalBounds.width;
-		cE.y = originPoint.y + base.finalBounds.height/3;
+		if(sub is FracBox){
+			cE.y = originPoint.y + base.finalBounds.height/2;
+		}else{
+			cE.y = originPoint.y + base.finalBounds.height/3;
+		}
 		sub.calculateBox(cE);
 
 		finalBounds.x = base.finalBounds.x;
@@ -33,31 +40,39 @@ class learnmath.mathml.formula.script.SubBox extends Box{
 	}
 
 
-	public function moveMyChildren(){
-		var cP = new Point();
+	override public function moveMyChildren():void{
+		var cP:Point = new Point();
 		cP.x = originPoint.x;
 		cP.y = originPoint.y;
 		base.moveOriginTo(cP);
 		
-		var cS = new Point();
+		var cS:Point = new Point();
 		cS.x = originPoint.x + base.finalBounds.width;
-		cS.y = originPoint.y + base.finalBounds.height/3;
+		if(sub is FracBox){
+			cS.y = originPoint.y + base.finalBounds.height/2;
+		}else{
+			cS.y = originPoint.y + base.finalBounds.height/3;
+		}
 		sub.moveOriginTo(cS);
 	}
 
 
-	public function copyParentStyle(_styleParent:Style){
+	override public function copyParentStyle(_styleParent:Style):void{
+		var s:int = 3;
+		if(sub is FracBox){ s = 5}
 		super.copyParentStyle(_styleParent);
 		
 		base.copyParentStyle(this.style);
-		var newStyle = this.style.getCopy();
-		newStyle.size = newStyle.size -3;
+		var newStyle:Style = this.style.getCopy();
+		newStyle.size = newStyle.size -s;
 		newStyle.fontweight='bold';
 		sub.copyParentStyle(newStyle);
 	}
 	
-	public function draw(graph:MovieClip){
+	override public function draw(graph:MovieClip):void{
 		base.drawBox(graph);
 		sub.drawBox(graph);
 	}
+}
+
 }

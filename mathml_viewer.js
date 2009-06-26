@@ -5,6 +5,7 @@
 //---------------------------------------------------------------
 
 var nbFlash = 0;
+var flashMathML = new Array();
 
 function getElement(id) {
 	return document.getElementById ? document.getElementById(id) : document.all[id];
@@ -32,12 +33,18 @@ function replaceTag(mathmlTag){
 	parent.setAttribute("id", "DivF" + nbFlash);
 	parent.style.width=1;
 	parent.style.height=1;
-	parent.innerHTML = getFlash("mathmlViewer.swf?htmlId=F" + nbFlash + "&xmlValue=" + encodeText(mathmlText), '100%', '100%', "F" + nbFlash);
+	parent.innerHTML = getFlash("mathmlViewer.swf?htmlId=F" + nbFlash , '100%', '100%', "F" + nbFlash);
 	parent.style.display="inline-block";
 	parent.style.zIndex=0;
+	flashMathML["F" + nbFlash] = mathmlText;
 	
 }
 
+function getMathML(name){
+	return flashMathML[name];
+}
+	
+	
 function getMathMLString(text){
 	if(text.indexOf("<?")==0){
 		text = text.substring(text.indexOf("/>") + 2);
