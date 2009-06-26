@@ -1,86 +1,95 @@
+﻿package learnmath.mathml.formula{
 /*-------------------------------------------------------------
 	Created by: Ionel Alexandru 
 	Mail: ionel.alexandru@gmail.com
 	Site: www.learn-math.info
 ---------------------------------------------------------------*/
+import flash.text.TextField;
 import learnmath.mathml.formula.*;
 import flash.events.MouseEvent;
 import flash.geom.*;
+import flash.display.MovieClip;
 
-class DrawFormula{
-	var parentBox:Box;
-	static var index:Number = 0;
-	static var allText;
+public class DrawFormula{
+	public var parentBox:Box;
+	public static var index:Number = 0;
+	public var mc:MovieClip;
 	
-	public function DrawFormula(box:Box){
+	
+	public function DrawFormula(box:Box):void{
 		parentBox=box;
 	}
 	
-	public function clear(){
-		if(allText!=null){
-			for(var i=0; i<allText.length; i++){
-				var text:TextField = allText[i];
-				text.removeTextField();
+	public function clear():void{
+		if(mc!=null){
+			//removeMovieClip(mc);
+			mc.graphics.clear();
+			while(mc.numChildren>0){
+				mc.removeChildAt(0);
 			}
-			allText = new Array();
 		}
 	}
 	
 	public function draw(graph:MovieClip, style:Style, leftMiddlePoint:Point):Rectangle{
+		if(mc==null){
+			mc = new MovieClip();
+			mc.name = "mc" + index;
+			graph.addChild(mc);
+		}
 
 		ResizeBox.clear();
 		parentBox.copyParentStyle(style);
 		parentBox.calculateBox(leftMiddlePoint);
 		ResizeBox.resizeChildren();
-		parentBox.draw(graph);
+		parentBox.draw(mc);
 
-		var newBounds:Rectangle =  new Rectangle();
-		newBounds.x = parentBox.finalBounds.x;
-		newBounds.y = parentBox.finalBounds.y;
-		newBounds.width = parentBox.finalBounds.width;
-		newBounds.height = parentBox.finalBounds.height;
-		
-		return newBounds;
+		return parentBox.finalBounds.clone();
 		
 	}
 	
-	static function createText(graph:MovieClip, startPoint:Point, text:String, style:Style){
-			var width = FontConstant.getWidth(style, text);
-			var height = FontConstant.getHeight(style, text);
-			graph.createTextField("g" + index, graph.getNextHighestDepth(), 0, 0, width, height);
-			var l:TextField = eval("graph.g" + index);
-			l.selectable = false;
-			l._x = startPoint.x;
-			l._y = startPoint.y;
-			l.text = text;
-			l.setTextFormat(FontConstant.getTextFormat(style, style.color));
-			//l.onSetFocus = function(l:TextField) {
-    		//	trace("" + l.text);
-			//};
-			index = index + 1;
-			addTextField(l);
+	public static function createText(graph:MovieClip, startPoint:Point, text:String, style:Style):void{
+		var width:Number = FontConstant.getWidth(style, text);
+		var height:Number = FontConstant.getHeight(style, text);
+		var l:TextField = new TextField();
+		l.name = "g" + index;
+		l.width = width;
+		l.height = height;
+		//graph.createTextField("g" + index, graph.getNextHighestDepth(), 0, 0, width, height);
+		//var l:TextField = eval("graph.g" + index);
+		l.selectable = false;
+		l.x = startPoint.x;
+		l.y = startPoint.y;
+		l.text = text;
+		l.setTextFormat(FontConstant.getTextFormat(style));
+		graph.addChild(l);
+		index = index + 1;
 	}
 	
-	static function calculateText(bounds:Rectangle, text:String, style:Style){
-			bounds.width = FontConstant.getWidth(style, text);
-			bounds.height = FontConstant.getHeight(style, text);
+	public static function calculateText(bounds:Rectangle, text:String, style:Style):void{
+		if(text==null || text=="") return;
+		bounds.width = FontConstant.getWidth(style, text);
+		bounds.height = FontConstant.getHeight(style, text);
 	}
 	
-	static function drawRectangle(graph:MovieClip, bounds:Rectangle){
-		graph.lineStyle(1, 0x000000, 100);
-		graph.moveTo(bounds.x, bounds.y);
-		graph.lineTo(bounds.x + bounds.width, bounds.y);
-		graph.lineTo(bounds.x + bounds.width, bounds.y + bounds.height);
-		graph.lineTo(bounds.x, bounds.y + bounds.height);
-		graph.lineTo(bounds.x, bounds.y);
+	public static function drawRectangle(graph:MovieClip, bounds:Rectangle):void{
+		graph.graphics.lineStyle(1, 0x000000, 100);
+		graph.graphics.moveTo(bounds.x, bounds.y);
+		graph.graphics.lineTo(bounds.x + bounds.width, bounds.y);
+		graph.graphics.lineTo(bounds.x + bounds.width, bounds.y + bounds.height);
+		graph.graphics.lineTo(bounds.x, bounds.y + bounds.height);
+		graph.graphics.lineTo(bounds.x, bounds.y);
 
 	}
 	
-	static function addTextField(text:TextField){
-		if(allText==null){
-			allText = new Array();
+	public static function drawBackground(graph:MovieClip, bounds:Rectangle, style:Style):void{
+		if(style!=null && style.bgcolor!=null && style.bgcolor.length>0){
+			graph.graphics.lineStyle(0, style.getHexBgColor(), 100);
+			graph.graphics.beginFill(style.getHexBgColor());   
+            		graph.graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);   
+            		graph.graphics.endFill();  		
 		}
-		allText[allText.length] = text;
 	}
-	
+
+}
+
 }
