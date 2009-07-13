@@ -1,22 +1,80 @@
 <html xmlns:m="http://www.w3.org/1998/Math/MathML">
 <head>
-<script language="JavaScript" src="mathml_viewer.js"></script>
+	<script language="JavaScript" src="mathml_viewer.js"></script>
 </head>
-<body onload="searchAndReplace();">
+<body onLoad="searchAndReplace();">
 <center>
-	<h3>MathML on web</h3>
+	<h3>MathML on web example - Right-click on formula to edit by javascript or MathML Editor</h3>
 
 <span style="display:none;">
 	<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
-	  	<m:mrow fontsize="13">
-			<m:mtext> a + b + c </m:mtext>
-		</m:mrow>
+						<mrow>
+							<mrow>
+								<msup>
+									<mn>2</mn>
+									<mrow>
+										<msup>
+											<mi>x</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>+</mo>
+										<mrow>
+											<mn>4</mn>
+											<mi>x</mi>
+										</mrow>
+										<mo>+</mo>
+										<mn>4</mn>
+									</mrow>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>45</mn>
+							</mrow>
+							<mo>=</mo>
+							<mn>0</mn>
+						</mrow>
 	</m:math>
 </span>
 
-
 <h3></h3>
 </center>
+
+<div id="editDiv" style="width:0;height:0;position:absolute;overflow:hidden">
+	<table width="100%" height="100%">
+	<tr height="100%">
+		<td align="center">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="100%" height="100%" id="editML" name="editML" align="middle">
+			<param name=wmode value="transparent">
+			<param name="allowScriptAccess" value="always"/>
+			<param name="allowFullScreen" value="true"/>
+			<param name="loop" value="false"/>
+			<param name="quality" value="high" />
+			<param name="flashVars" value="htmlId=1&width=800&height=400"/>
+			<param name="movie" value="MathMLEditor.swf" />
+			<embed src="MathMLEditor.swf"
+	            wmode="transparent"
+				flashVars="htmlId=1&width=800&height=400"
+				loop="false"
+				quality="high"
+				width="100%"
+				height="100%"
+                id="editML"
+				name="editML"
+				align="middle"
+                swliveconnect="true"                
+				allowScriptAccess="always"
+				allowFullScreen="true"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer" />
+		</object>		
+		</td>
+	</tr>
+	</table>
+</div>
 
 </body>
 </html>
